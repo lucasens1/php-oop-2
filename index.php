@@ -38,6 +38,7 @@ $toy_array = [
     $toyProd6 = new ToyProduct("Palla di pezza", "Perfetta per far giocare il cane", 1.60, "./Imgs/abc.jpg", $dogsCategory, 60, "Tessuto"),
     $toyProd7 = new ToyProduct("Palla di pezza", "Perfetta per far giocare il cane", 1.60, "./Imgs/abc.jpg", $dogsCategory, 60, "Tessuto"),
     $toyProd8 = new ToyProduct("Palla di pezza", "Perfetta per far giocare il cane", 1.60, "./Imgs/abc.jpg", $dogsCategory, 60, "Tessuto"),
+    $toyProd9 = new ToyProduct("Palla di pezza", "Perfetta per far giocare il cane", 1.60, "./Imgs/abc.jpg", $dogsCategory, 60, "Tessuto"),
 ];
 
 ?>
@@ -57,10 +58,11 @@ $toy_array = [
                 <?php foreach($food_array AS $food){ ?>
                     <div class="card">
                         <img src="<?php echo $food->getImg() ?>" alt="Immagine">
-                        <h3><?php echo $food->getName() ?></h3>
+                        <h4><?php echo $food->getName() ?></h4>
                         <p><?php echo $food->getDesc() ?></p>
                         <p><?php echo $food->getPrice()." €" ?></p>
-                        <span> <?php echo $food->getCategory() ?> </span>
+                        <p><?php echo $food->getType() ?></p>
+                        <span class="<?php echo ($food->getCategory() === 'Cani') ? 'dogStyle' : 'catStyle'; ?>"> <?php echo $food->getCategory() ?> </span>
                     </div>
                 <?php } ?>
             </div>
@@ -72,7 +74,8 @@ $toy_array = [
                         <h4><?php echo $toy->getName() ?></h4>
                         <p><?php echo $toy->getDesc() ?></p>
                         <p><?php echo $toy->getPrice()." €" ?></p>
-                        <span class="<?php ?>"> <?php echo $toy->getCategory() ?> </span>
+                        <p><?php echo $toy->getType() ?></p>
+                        <span class="<?php echo ($toy->getCategory() === 'Cani') ? 'dogStyle' : 'catStyle'; ?>"> <?php echo $toy->getCategory() ?> </span>
                     </div>
                 <?php } ?>
             </div>
@@ -90,30 +93,60 @@ $toy_array = [
 }
 .wrapper{
     width: 100%;
-    border: 1px solid blue;
+    height: 100%;
+    background-color: #243245;
 }
 .container{
     width: 80%;
     margin: 0 auto;
-    border: 1px solid red;
 }
 .toy-section,
 .food-section{
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    border: 1px solid black;
-    padding: 8px 16px;
+    gap: 20px;
+    border-radius: 16px;
+    padding: 18px 24px;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
     text-align: center;
+    background-color: #043245;
+}
+
+.dogStyle{
+    display: inline-block;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 16px;
+    background-color: #123245;
+}
+
+.catStyle{
+    display: inline-block;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 16px;
+    background-color: #6888;
 }
 
 .card{
-    border: 1px solid green;
+    border: 1px solid #123245;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 24px;
+    background-color: white;
+    box-shadow: 0 2px 6px rgba(250, 250, 250, 0.72); 
+    gap: 8px;
     padding: 24px;
-    height: 250px;
+    max-width: 250px;
     width: calc(100% / 3 - 48px);
+    transition: all 0.7s;
+}
+.card:hover{
+    box-shadow: none;
+    transition:all 0.7s;
 }
 .card img{
     width: 75px;
@@ -122,5 +155,11 @@ $toy_array = [
 h2{
     text-align: center;
     padding: 8px 24px;
+    color: white;
+}
+p,
+span,
+h4{
+    padding-top: 10px;
 }
 </style>

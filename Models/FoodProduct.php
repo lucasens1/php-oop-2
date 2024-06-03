@@ -1,6 +1,7 @@
 <?php
 class FoodProduct extends Products{
     # Food Properties
+    private string $article_type;
     public int $calories;
     public string $expire_date;
     public int $g_quantity;
@@ -12,6 +13,11 @@ class FoodProduct extends Products{
         $this->calories = $_calories;
         $this->expire_date = $_expire_date;
         $this->g_quantity = $_g_quantity;
+        $this->article_type = "Cibo";
+    }
+
+    public function getType(){
+        return $this->article_type;
     }
 }
 ?>

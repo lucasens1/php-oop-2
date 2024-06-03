@@ -1,6 +1,7 @@
 <?php
 class ToyProduct extends Products{
     # Toy Properties
+    private string $article_type;
     public string $weight;
     public string $material;
 
@@ -10,6 +11,11 @@ class ToyProduct extends Products{
         parent::__construct($_name, $_description, $_price, $_image, $_category);
         $this->weight = $_weight;
         $this->material = $_material;
+        $this->article_type = "Gioco";
+    }
+
+    public function getType(){
+        return $this->article_type;
     }
 
 }
