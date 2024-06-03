@@ -7,5 +7,9 @@ class Categories{
     {
         $this->name = $_name;
     }
+    
+    public function getCatName(){
+        return $this->name;
+    }
 }
 ?>

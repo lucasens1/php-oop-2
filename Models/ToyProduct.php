@@ -5,11 +5,12 @@ class ToyProduct extends Products{
     public string $material;
 
     #----------------- CONSTRUCTOR ---------------
-    public function __construct(string $_name, string $_description, float $_price, string $_image, Categories $_category, string $_weight, string $_material, int $_age)
+    public function __construct(string $_name, string $_description, float $_price, string $_image, Categories $_category, string $_weight, string $_material)
     {
         parent::__construct($_name, $_description, $_price, $_image, $_category);
         $this->weight = $_weight;
         $this->material = $_material;
     }
+
 }
 ?>

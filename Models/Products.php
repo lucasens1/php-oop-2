@@ -1,5 +1,4 @@
 <?php
-require_once __DIR__."/ProducType.php";
 require_once __DIR__."/Categories.php";
 class Products {
     # Product Properties
@@ -17,9 +16,23 @@ class Products {
         $this->price = $_price;
         $this->image = $_image;
         $this->category = $_category;
-    }
+    }   
 
-    
+    public function getImg(){
+        return $this->image;
+    }
+    public function getName(){
+        return $this->name;
+    }
+    public function getDesc(){
+        return $this->description;
+    }
+    public function getPrice(){
+        return $this->price;
+    }
+    public function getCategory(){
+        return $this->category->getCatName();
+    }
 }
 
 ?>
