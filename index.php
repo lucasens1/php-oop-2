@@ -28,24 +28,24 @@ try{
 
 #Istanzio tipi di prodotti
 $food_array = [
-    $foodProd1 = new FoodProduct("Croccantini per Cani", "Gusto carne di Manzo", 3.99, "./Imgs/abc.jpg", $dogsCategory, 400, "2028-10-10", 250),
-    $foodProd2 = new FoodProduct("Croccantini per Gatti", "Gusto carne di Merluzzo", 4.99, "./Imgs/abc.jpg", $catsCategory, 500, "2028-10-10", 320),
-    $foodProd3 = new FoodProduct("Umido per Cani", "Gusto carne di Pollo", 1.99, "./Imgs/abc.jpg", $dogsCategory, 600, "2028-10-10", 450),
-    $foodProd4 = new FoodProduct("Umido per Gatti", "Gusto carne di Tonno", 5.99, "./Imgs/abc.jpg", $catsCategory, 260, "2028-10-10", 120),
-    $foodProd5 = new FoodProduct("Umido Gatti Sterilizzati", "Gusto Acciuga", 1.99, "./Imgs/abc.jpg", $catsCategory, 300, "2028-10-10", 220),
-    $foodProd6 = new FoodProduct("Croccantini per Gatti Sterilizzati", "Gusto carne", 6.99, "./Imgs/abc.jpg", $catsCategory, 700, "2028-10-10", 700),
+    # ("Nome", "Descrizione","Prezzo", "Categoria","Peso"[Trait])
+    $foodProd1 = new FoodProduct("Croccantini per Cani", "Gusto carne di Manzo", 3.99, $dogsCategory, 250),
+    $foodProd2 = new FoodProduct("Croccantini per Gatti", "Gusto carne di Merluzzo", 4.99, $catsCategory, 500, "2028-10-10", 320),
+    $foodProd3 = new FoodProduct("Umido per Cani", "Gusto carne di Pollo", 1.99, $dogsCategory, 600, "2028-10-10", 450)
 ];
 
+$foodProd1->setCalories(300);
+$foodProd1->setExpire_date("2030-12-12");
+$foodProd2->setCalories(520);
+$foodProd2->setExpire_date("2030-11-30");
+$foodProd3->setCalories(450);
+$foodProd3->setExpire_date("2032-02-28");
+
 $toy_array = [
-    $toyProd1 = new ToyProduct("Palla di pezza", "Perfetta per far giocare il cane", 1.60, "./Imgs/abc.jpg", $dogsCategory, 60, "Tessuto"),
-    $toyProd2 = new ToyProduct("Palla di pezza", "Perfetta per far giocare il cane", 1.60, "./Imgs/abc.jpg", $dogsCategory, 60, "Tessuto"),
-    $toyProd3 = new ToyProduct("Palla di pezza", "Perfetta per far giocare il cane", 1.60, "./Imgs/abc.jpg", $dogsCategory, 60, "Tessuto"),
-    $toyProd4 = new ToyProduct("Palla di pezza", "Perfetta per far giocare il cane", 1.60, "./Imgs/abc.jpg", $dogsCategory, 60, "Tessuto"),
-    $toyProd5 = new ToyProduct("Palla di pezza", "Perfetta per far giocare il cane", 1.60, "./Imgs/abc.jpg", $dogsCategory, 60, "Tessuto"),
-    $toyProd6 = new ToyProduct("Palla di pezza", "Perfetta per far giocare il cane", 1.60, "./Imgs/abc.jpg", $dogsCategory, 60, "Tessuto"),
-    $toyProd7 = new ToyProduct("Palla di pezza", "Perfetta per far giocare il cane", 1.60, "./Imgs/abc.jpg", $dogsCategory, 60, "Tessuto"),
-    $toyProd8 = new ToyProduct("Palla di pezza", "Perfetta per far giocare il cane", 1.60, "./Imgs/abc.jpg", $dogsCategory, 60, "Tessuto"),
-    $toyProd9 = new ToyProduct("Palla di pezza", "Perfetta per far giocare il cane", 1.60, "./Imgs/abc.jpg", $dogsCategory, 60, "Tessuto"),
+    $toyProd1 = new ToyProduct("Palla di pezza", "Perfetta per far giocare il cane", 1.60, $dogsCategory, 60, "Tessuto"),
+    $toyProd2 = new ToyProduct("Palla di pezza", "Perfetta per far giocare il cane", 1.60, $dogsCategory, 60, "Tessuto"),
+    $toyProd3 = new ToyProduct("Palla di pezza", "Perfetta per far giocare il cane", 1.60, $dogsCategory, 60, "Tessuto"),
+    $toyProd4 = new ToyProduct("Palla di pezza", "Perfetta per far giocare il cane", 1.60, $dogsCategory, 60, "Tessuto")
 ];
 
 ?>
