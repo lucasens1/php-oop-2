@@ -1,12 +1,11 @@
 <?php
-/* Ciao ragazzi,
-esercizio di oggi:
-nome repo: php-oop-2
-Immaginare quali sono le classi necessarie per creare uno shop online con le seguenti caratteristiche:
-
+/*
 L'e-commerce vende prodotti per animali. I prodotti sono categorizzati, le categorie sono Cani o Gatti.
 I prodotti saranno oltre al cibo, anche giochi, cucce, etc.
-Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, prezzo, icona della categoria ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia). */
+Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, prezzo, icona della categoria ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia). 
+*/
+
+#Includo Files
 require_once __DIR__."/Models/Products.php";
 require_once __DIR__ ."/Models/Categories.php";
 require_once __DIR__ ."/Models/FoodProduct.php";
@@ -62,6 +61,7 @@ $toy_array = [
                         <p><?php echo $food->getDesc() ?></p>
                         <p><?php echo $food->getPrice()." €" ?></p>
                         <p><?php echo $food->getType() ?></p>
+                        <p><?php echo $food->getKgWeight()." Kg" ?></p>
                         <span class="<?php echo ($food->getCategory() === 'Cani') ? 'dogStyle' : 'catStyle'; ?>"> <?php echo $food->getCategory() ?> </span>
                     </div>
                 <?php } ?>
@@ -75,6 +75,7 @@ $toy_array = [
                         <p><?php echo $toy->getDesc() ?></p>
                         <p><?php echo $toy->getPrice()." €" ?></p>
                         <p><?php echo $toy->getType() ?></p>
+                        <p><?php echo $food->getWeight()." g" ?></p>
                         <span class="<?php echo ($toy->getCategory() === 'Cani') ? 'dogStyle' : 'catStyle'; ?>"> <?php echo $toy->getCategory() ?> </span>
                     </div>
                 <?php } ?>
