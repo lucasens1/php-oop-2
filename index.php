@@ -64,7 +64,7 @@ $toy_array = [
             <div class="food-section">               
                 <?php foreach($food_array AS $food){ ?>
                     <div class="card">
-                        <img src="<?php echo $food->getImg() ?>" alt="Immagine">
+                        <img src="<?php echo $food->getImage() ?>" alt="Immagine">
                         <h4><?php echo $food->getName() ?></h4>
                         <p><?php echo $food->getDesc() ?></p>
                         <p><?php echo $food->getPrice()." €" ?></p>
@@ -78,7 +78,7 @@ $toy_array = [
             <div class="toy-section">
                 <?php foreach($toy_array AS $toy){ ?>
                     <div class="card">
-                        <img src="<?php echo $toy->getImg() ?>" alt="Immagine">
+                        <img src="<?php echo $toy->getImage() ?>" alt="Immagine">
                         <h4><?php echo $toy->getName() ?></h4>
                         <p><?php echo $toy->getDesc() ?></p>
                         <p><?php echo $toy->getPrice()." €" ?></p>
@@ -150,6 +150,7 @@ $toy_array = [
     gap: 8px;
     padding: 24px;
     max-width: 250px;
+    min-width: 200px;
     width: calc(100% / 3 - 48px);
     transition: all 0.7s;
 }

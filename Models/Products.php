@@ -16,10 +16,7 @@ class Products {
         $this->price = $_price;
         $this->category = $_category;
     }   
-
-    public function getImg(){
-        return $this->image;
-    }
+    
     public function getName(){
         return $this->name;
     }
@@ -34,7 +31,7 @@ class Products {
     }
 
     public function getImage(){
-        return $this->image;
+        return self::$image;
     }
 }
 
