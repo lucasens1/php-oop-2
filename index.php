@@ -42,11 +42,17 @@ $foodProd3->setCalories(450);
 $foodProd3->setExpire_date("2032-02-28");
 
 $toy_array = [
-    $toyProd1 = new ToyProduct("Palla di pezza", "Perfetta per far giocare il cane", 1.60, $dogsCategory, 60, "Tessuto"),
-    $toyProd2 = new ToyProduct("Palla di pezza", "Perfetta per far giocare il cane", 1.60, $dogsCategory, 60, "Tessuto"),
-    $toyProd3 = new ToyProduct("Palla di pezza", "Perfetta per far giocare il cane", 1.60, $dogsCategory, 60, "Tessuto"),
-    $toyProd4 = new ToyProduct("Palla di pezza", "Perfetta per far giocare il cane", 1.60, $dogsCategory, 60, "Tessuto")
+    # ("Nome", "Descrizione","Prezzo", "Categoria","Peso"[Trait])
+    $toyProd1 = new ToyProduct("Palla di pezza", "Perfetta per far giocare il cane", 1.60, $dogsCategory, 60),
+    $toyProd2 = new ToyProduct("Palla di cartone", "Perfetta per far giocare il gatto", 11.60, $catsCategory, 60),
+    $toyProd3 = new ToyProduct("Palla di carta", "Perfetta per far giocare il cane", 5.60, $dogsCategory, 60),
+    $toyProd4 = new ToyProduct("Palla di gommaa", "Perfetta per far giocare il gatto", 3.60, $catsCategory, 60)
 ];
+
+$toyProd1->setMaterial("Pezza");
+$toyProd2->setMaterial("Cartone");
+$toyProd3->setMaterial("Carta");
+$toyProd4->setMaterial("Gomma");
 
 ?>
 
@@ -108,6 +114,7 @@ $toy_array = [
 .container{
     width: 80%;
     margin: 0 auto;
+    padding-bottom: 120px;
 }
 .toy-section,
 .food-section{
@@ -115,7 +122,7 @@ $toy_array = [
     flex-wrap: wrap;
     gap: 20px;
     border-radius: 16px;
-    padding: 18px 24px;
+    padding: 18px 36px;
     justify-content: space-between;
     align-items: stretch;
     text-align: center;
@@ -152,11 +159,11 @@ $toy_array = [
     max-width: 250px;
     min-width: 200px;
     width: calc(100% / 3 - 48px);
-    transition: all 0.7s;
+    transition: 0.7s;
 }
 .card:hover{
     box-shadow: none;
-    transition:all 0.7s;
+    transition: 0.7s;
 }
 .card img{
     width: 75px;

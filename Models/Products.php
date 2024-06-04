@@ -16,7 +16,7 @@ class Products {
         $this->price = $_price;
         $this->category = $_category;
     }   
-    
+
     public function getName(){
         return $this->name;
     }
@@ -24,7 +24,7 @@ class Products {
         return $this->description;
     }
     public function getPrice(){
-        return $this->price;
+        return number_format($this->price,2,'.','');
     }
     public function getCategory(){
         return $this->category->getCatName();
