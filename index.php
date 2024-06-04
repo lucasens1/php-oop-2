@@ -13,8 +13,16 @@ require_once __DIR__."/Models/ToyProduct.php";
 
 
 #Creo le categorie
-$dogsCategory = new Categories("Cani");
-$catsCategory = new Categories("Gatti");
+
+# Uso try and catch per controllare che le nuove categorie non siano valori numerici
+
+try{
+    $dogsCategory = new Categories("Cani");
+    $catsCategory = new Categories("Gatti");
+} catch (Exception $e) {
+    echo "Eccezione : " . $e->getMessage();
+}
+
 
 
 

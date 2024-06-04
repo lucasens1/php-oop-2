@@ -5,7 +5,11 @@ class Categories{
     #----------- CONSTRUCTOR -----------
     public function __construct(string $_name)
     {
-        $this->name = $_name;
+        if(is_string($_name) && !is_numeric($_name)){
+            $this->name = $_name;
+        } else {
+            throw new Exception("Non è possibile categorizzare per numero ");
+        }
     }
     
     public function getCatName(){
